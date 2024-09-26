@@ -5,7 +5,10 @@ import streamlit as st
 from PIL import Image
 
 # Set the Tesseract executable path
-pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+import pytesseract
+
+# Set the Tesseract executable path for Windows
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def extract_text(image):
     # Convert the uploaded image to grayscale

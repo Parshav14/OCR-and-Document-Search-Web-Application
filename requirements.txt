@@ -1,5 +1,5 @@
-streamlit
-opencv-python-headless
-numpy
-pytesseract
-Pillow
+streamlit==1.25.0
+Pillow==9.1.0
+easyocr==1.6.2
+torch==2.0.1  # EasyOCR relies on PyTorch
+opencv-python-headless==4.7.0.72  # Needed for image processing in EasyOCR

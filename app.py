@@ -1,11 +1,16 @@
+import os
 import cv2
 import numpy as np
 import pytesseract
 import streamlit as st
 from PIL import Image
 
-# Configure pytesseract to use the Tesseract executable path
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+# Get the Tesseract executable path from the environment variable
+tesseract_path = os.environ.get('TESSERACT_PATH')
+if tesseract_path:
+    pytesseract.pytesseract.tesseract_cmd = tesseract_path
+else:
+    st.error("Tesseract executable not found. Please set the TESSERACT_PATH environment variable.")
 
 def extract_text(image):
     # Convert the uploaded image from numpy array to grayscale

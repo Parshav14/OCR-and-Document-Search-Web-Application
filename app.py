@@ -18,7 +18,7 @@ def add_bg_image(bg_url):
     )
 
 # Set a background image (you can replace the URL with your local path if needed)
-add_bg_image("https://images.unsplash.com/photo-1563291074-2bf8677ac0e5?q=80&w=1907&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+add_bg_image("")
 
 # Title of the app with enhanced design
 st.markdown("<h1 style='text-align: center; color: orange;'>OCR and Keyword Search Web Application</h1>", unsafe_allow_html=True)

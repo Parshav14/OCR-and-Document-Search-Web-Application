@@ -1,19 +1,14 @@
-# OCR and Keyword Search Web Application
+# OCR and Document Search Web Application
 
-This web application allows users to upload an image and perform Optical Character Recognition (OCR) to extract text. It also includes a keyword search functionality to find specific terms within the extracted text.
+## Description
+This web application allows users to upload an image containing Hindi and English text. It extracts the text using OCR (Optical Character Recognition) and allows users to search for keywords within the extracted text, highlighting the matching sections.
 
 ## Requirements
-
 - Python 3.x
-- Streamlit
-- Transformers
-- PyTorch
-- Pillow
+- Tesseract OCR installed on your machine
 
 ## Installation
-
-1. Clone the repository.
-2. Navigate to the project directory.
-3. Install the required libraries:
+1. Clone the repository:
    ```bash
-   pip install -r requirements.txt
+   git clone <your-repo-url>
+   cd <your-repo-directory>

@@ -7,7 +7,7 @@ import re
 
 # Configure pytesseract to use the Tesseract executable path if needed
 # Uncomment the following line if you need to set a specific Tesseract path
-pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 # pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 def extract_text(image):
     """Extract text from the image using pytesseract."""

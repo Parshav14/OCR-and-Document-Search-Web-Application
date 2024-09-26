@@ -1,15 +1,19 @@
 # OCR and Keyword Search Web Application
 
-This is a web-based application that allows users to upload images and extract text using Optical Character Recognition (OCR). It supports both Hindi and English text and includes a keyword search feature.
+This web application allows users to upload an image and perform Optical Character Recognition (OCR) to extract text. It also includes a keyword search functionality to find specific terms within the extracted text.
 
-## Features
-- Upload images in PNG, JPG, or JPEG format.
-- Extract text from images using OCR.
-- Search for keywords in the extracted text.
+## Requirements
 
-## Setup and Running Locally
+- Python 3.x
+- Streamlit
+- Transformers
+- PyTorch
+- Pillow
 
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/ocr-search-app.git
-cd ocr-search-app
+## Installation
+
+1. Clone the repository.
+2. Navigate to the project directory.
+3. Install the required libraries:
+   ```bash
+   pip install -r requirements.txt

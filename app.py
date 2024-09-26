@@ -10,12 +10,14 @@ def add_bg_image(bg_url):
         .stApp {{
             background-image: url({bg_url});
             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }}
         </style>
         """, unsafe_allow_html=True
     )
 
-# Set a background image
+# Set a background image (you can replace the URL with your local path if needed)
 add_bg_image("https://your-background-image-link.com/background.jpg")
 
 # Title of the app with enhanced design
@@ -30,7 +32,7 @@ def perform_ocr(image):
     # Convert image to RGB for processing
     image_rgb = image.convert("RGB")
     result = reader.readtext(image_rgb)
-    
+
     # Extract text from result
     extracted_text = " ".join([text[1] for text in result])
     return extracted_text

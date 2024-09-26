@@ -23,7 +23,7 @@ def add_bg_image():
 add_bg_image()
 
 # Title with styled colors and effects
-st.markdown("<h1 style='text-align: center; color: #FF6347; font-family: sans-serif;'>✨ Accurate OCR for English and Hindi ✨</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #FF6347; font-family: sans-serif;'>✨ SnapExtract - Accurate OCR ✨</h1>", unsafe_allow_html=True)
 st.write("<hr style='border:2px solid #FF6347;'>", unsafe_allow_html=True)
 
 # Upload an image section
@@ -64,6 +64,6 @@ else:
 st.markdown("<hr style='border:1px solid #FF6347;'>", unsafe_allow_html=True)
 st.markdown("""
     <div style='text-align: center;'>
-        <p style='color: #808080;'>Developed with ❤️ by <a href='https://your-portfolio-link.com' target='_blank'>Parshav Singla</a></p>
+        <p style='color: #808080;'>Developed with ❤️ by Parshav Singla</a></p>
     </div>
     """, unsafe_allow_html=True)

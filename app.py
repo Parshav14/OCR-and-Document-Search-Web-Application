@@ -1,64 +1,56 @@
 import streamlit as st
+import easyocr
 from PIL import Image
-import pytesseract
-import base64
 
-# Function to add a background image for enhanced design
-def add_bg_image(bg_url):
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-image: url({bg_url});
-            background-size: cover;
-        }}
-        </style>
-        """, unsafe_allow_html=True
-    )
+# Initialize EasyOCR Reader for English and Hindi
+reader = easyocr.Reader(['en', 'hi'])
 
-# Set a background image
-add_bg_image("https://your-background-image-link.com/background.jpg")
+# Function to perform OCR on the uploaded image
+def perform_ocr(image):
+    # Convert image to RGB for processing
+    image_rgb = image.convert("RGB")
+    result = reader.readtext(image_rgb)
+    
+    # Extract text from result
+    extracted_text = " ".join([text[1] for text in result])
+    return extracted_text
 
-# Title of the app with enhanced design
-st.markdown("<h1 style='text-align: center; color: orange;'>OCR and Keyword Search Web Application</h1>", unsafe_allow_html=True)
-st.write("---")
+# Function to search keywords in extracted text
+def search_keywords(text, keywords):
+    results = []
+    for keyword in keywords:
+        if keyword in text:
+            results.append(keyword)
+    return results
 
-# Upload an image file
-uploaded_file = st.file_uploader("Upload an Image (PNG, JPG, JPEG)", type=["png", "jpg", "jpeg"])
+# Streamlit UI
+st.title("OCR and Document Search Web Application")
+st.write("Upload an image file (JPEG, PNG) containing text in Hindi and English.")
 
+# Image upload
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 if uploaded_file is not None:
-    # Display uploaded image
-    img = Image.open(uploaded_file)
-    st.image(img, caption="Uploaded Image", use_column_width=True)
+    image = Image.open(uploaded_file)
+    st.image(image, caption='Uploaded Image.', use_column_width=True)
     
-    # Extract text from the image using OCR
-    custom_config = r'--oem 3 --psm 6 -l eng+hin'
-    extracted_text = pytesseract.image_to_string(img, config=custom_config)
+    # Perform OCR
+    st.write("Performing OCR...")
+    extracted_text = perform_ocr(image)
     
-    # Display extracted text with a collapsible section
-    with st.expander("Extracted Text"):
-        st.write(extracted_text)
+    st.subheader("Extracted Text:")
+    st.write(extracted_text)
     
-    # Keyword search functionality
-    search_keyword = st.text_input("Enter a keyword to search in the extracted text:")
-    if search_keyword:
-        if search_keyword.lower() in extracted_text.lower():
-            st.markdown(f"<p style='color: green;'>✅ **Keyword found:** {search_keyword}</p>", unsafe_allow_html=True)
-            
-            # Highlight matched keywords in the extracted text
-            highlighted_text = extracted_text.replace(search_keyword, f"**{search_keyword}**")
-            st.write(highlighted_text)
+    # Keyword search
+    st.subheader("Search in Extracted Text")
+    keywords = st.text_input("Enter keywords (comma separated):")
+    if st.button("Search"):
+        if keywords:
+            keywords_list = [k.strip() for k in keywords.split(",")]
+            search_results = search_keywords(extracted_text, keywords_list)
+            if search_results:
+                st.write("Matching Keywords:")
+                st.write(", ".join(search_results))
+            else:
+                st.write("No matches found.")
         else:
-            st.markdown("<p style='color: red;'>❌ Keyword not found.</p>", unsafe_allow_html=True)
-
-else:
-    st.markdown("<h4 style='text-align: center; color: grey;'>Please upload an image to begin OCR and search.</h4>", unsafe_allow_html=True)
-
-# Footer section with additional info
-st.markdown("""
-    <hr>
-    <div style='text-align: center;'>
-        <p style='color: grey;'>Developed by <a href='https://your-portfolio-link.com' target='_blank'>Your Name</a></p>
-        <p style='color: grey;'>Hoping to be at IITR soon for internship!</p>
-    </div>
-    """, unsafe_allow_html=True)
+            st.write("Please enter keywords to search.")

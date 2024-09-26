@@ -1,7 +1,6 @@
 import streamlit as st
 from PIL import Image
 import pytesseract
-import base64
 
 # Function to add a background image for enhanced design
 def add_bg_image(bg_url):
@@ -44,8 +43,6 @@ if uploaded_file is not None:
     if search_keyword:
         if search_keyword.lower() in extracted_text.lower():
             st.markdown(f"<p style='color: green;'>✅ **Keyword found:** {search_keyword}</p>", unsafe_allow_html=True)
-            
-            # Highlight matched keywords in the extracted text
             highlighted_text = extracted_text.replace(search_keyword, f"**{search_keyword}**")
             st.write(highlighted_text)
         else:

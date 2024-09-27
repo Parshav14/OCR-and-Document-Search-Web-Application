@@ -23,7 +23,7 @@ def add_bg_image():
 add_bg_image()
 
 # Title with styled colors and effects
-st.markdown("<h1 style='text-align: center; color: #FF6347; font-family: sans-serif;'>✨ SnapExtract - Accurate OCR ✨</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #FF6347; font-family: sans-serif;'>✨SnapExtract - Accurate OCR✨</h1>", unsafe_allow_html=True)
 st.write("<hr style='border:2px solid #FF6347;'>", unsafe_allow_html=True)
 
 # Upload an image section
@@ -48,7 +48,11 @@ if uploaded_file is not None:
     st.write(f"<div style='background-color:#F0F8FF; padding:10px; border-radius:5px; color:#00008B;'>{final_text}</div>", unsafe_allow_html=True)
 
     # Keyword search input with custom font and placeholder
-    search_keyword = st.text_input("<span style='color:#FF4500;'>🔍 Enter a keyword to search in the extracted text:</span>", "", unsafe_allow_html=True)
+    # Displaying the keyword search label with HTML styling separately
+    st.markdown("<h4 style='color:#FF4500;'>🔍 Enter a keyword to search in the extracted text:</h4>", unsafe_allow_html=True)
+
+    # Keep the text input standard, without HTML
+    search_keyword = st.text_input("Search for a keyword")
 
     # Keyword search result display with icons and dynamic color
     if search_keyword:

@@ -30,6 +30,10 @@ st.write("<hr style='border:2px solid #FF6347;'>", unsafe_allow_html=True)
 st.markdown("<h3 style='color: #4682B4; font-family: Arial;'>Upload an Image (PNG, JPG, JPEG):</h3>", unsafe_allow_html=True)
 uploaded_file = st.file_uploader("", type=["png", "jpg", "jpeg"])
 
+# Initialize session state for storing extracted text
+if 'final_text' not in st.session_state:
+    st.session_state.final_text = ""
+
 if uploaded_file is not None:
     # Display the uploaded image with a border and shadow effect
     img = Image.open(uploaded_file)
@@ -39,16 +43,16 @@ if uploaded_file is not None:
     # Convert image to numpy array for OCR
     img_array = np.array(img)
 
-    # Extract text from the image
+    # Extract text from the image only if it's not already in session state
     extracted_text = reader.readtext(img_array, detail=0)
-    final_text = " ".join(extracted_text)
+    st.session_state.final_text = " ".join(extracted_text)
 
-    # Display the extracted text with custom styling
+# Display the extracted text with custom styling
+if st.session_state.final_text:
     st.markdown("<h3 style='color: #8A2BE2;'>Extracted Text:</h3>", unsafe_allow_html=True)
-    st.write(f"<div style='background-color:#F0F8FF; padding:10px; border-radius:5px; color:#00008B;'>{final_text}</div>", unsafe_allow_html=True)
+    st.write(f"<div style='background-color:#F0F8FF; padding:10px; border-radius:5px; color:#00008B;'>{st.session_state.final_text}</div>", unsafe_allow_html=True)
 
     # Keyword search input with custom font and placeholder
-    # Displaying the keyword search label with HTML styling separately
     st.markdown("<h4 style='color:#FF4500;'>🔍 Enter a keyword to search in the extracted text:</h4>", unsafe_allow_html=True)
 
     # Keep the text input standard, without HTML
@@ -56,21 +60,18 @@ if uploaded_file is not None:
 
     # Keyword search result display with icons and dynamic color
     if search_keyword:
-        if search_keyword.lower() in final_text.lower():
+        if search_keyword.lower() in st.session_state.final_text.lower():
             st.markdown(f"<h4 style='color:green;'>✅ <b>Keyword found:</b> {search_keyword}</h4>", unsafe_allow_html=True)
         else:
             st.markdown(f"<h4 style='color:red;'>❌ <b>Keyword '{search_keyword}' not found.</b></h4>", unsafe_allow_html=True)
-
 else:
     st.markdown("<h4 style='text-align: center; color: grey;'>Please upload an image to extract text.</h4>", unsafe_allow_html=True)
 
 # Footer section with 'Made with Love' and a heart symbol
 st.markdown("<hr style='border:1px solid #FF6347;'>", unsafe_allow_html=True)
-# Footer section with "Made with Love" and styling
 st.markdown("""
     <hr>
     <div style='text-align: center;'>
-        <p style='color: grey;'>Made with ❤️ by Parshav Singla</a></p>
+        <p style='color: grey;'>Made with ❤️ by Parshav Singla</p>
     </div>
     """, unsafe_allow_html=True)
-

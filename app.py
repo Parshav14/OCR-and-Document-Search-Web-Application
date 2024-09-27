@@ -66,8 +66,11 @@ else:
 
 # Footer section with 'Made with Love' and a heart symbol
 st.markdown("<hr style='border:1px solid #FF6347;'>", unsafe_allow_html=True)
+# Footer section with "Made with Love" and styling
 st.markdown("""
+    <hr>
     <div style='text-align: center;'>
-        <p style='color: #808080;'>Developed with ❤️ by Parshav Singla</a></p>
+        <p style='color: grey;'>Made with ❤️ by Parshav Singla</a></p>
     </div>
     """, unsafe_allow_html=True)
+

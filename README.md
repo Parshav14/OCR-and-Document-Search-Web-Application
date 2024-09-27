@@ -99,7 +99,7 @@ You can deploy **SnapExtract** using **Streamlit Cloud** or other cloud platform
 In this section, you'll find screenshots and sample results from the **SnapExtract** portal. Below are some examples showcasing the OCR extraction and keyword search functionalities.
 
 ### 📸 Example 1: SnapExtract
-![English Text Extraction](https://ibb.co/cJjSSzd)
+(https://ibb.co/cJjSSzd)
 > Screenshot of **SnapExtract**
 
 ### 📸 Example 2

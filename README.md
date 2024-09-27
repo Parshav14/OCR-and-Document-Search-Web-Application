@@ -1,7 +1,3 @@
-Here's a detailed and descriptive README file for your project, with emojis and easy-to-follow instructions. I've covered all the deliverables, from code submission to the deployment and live web app.
-
----
-
 # 📜 SnapExtract - Accurate OCR 🖼️✨
 
 Welcome to **SnapExtract** – an intuitive web application that extracts text from images with high accuracy, supporting both **English** and **Hindi** languages. This tool allows users to upload images, extract text, and search for specific keywords within the extracted text, all wrapped in a stylish and interactive interface. 
@@ -124,4 +120,4 @@ Users can input a keyword, and the app will search within the extracted text. Th
 ---
 
 ## ❤️ Made with Love
-This project was **crafted with passion** by **Parshav Singla**! 🧡
+This project is **crafted with passion** by **Parshav Singla**! 🧡

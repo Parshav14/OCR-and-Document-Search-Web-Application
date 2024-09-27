@@ -2,7 +2,6 @@
 
 Welcome to **SnapExtract** – an intuitive web application that extracts text from images with high accuracy, supporting both **English** and **Hindi** languages. This tool allows users to upload images, extract text, and search for specific keywords within the extracted text, all wrapped in a stylish and interactive interface. 
 
-Check it out -> https://ocr-and-document-search-web-application-85s7nhf36ctfd2yybnzdh2.streamlit.app
 ---
 
 ## 🚀 Project Overview
@@ -95,15 +94,34 @@ You can deploy **SnapExtract** using **Streamlit Cloud** or other cloud platform
 
 ---
 
-## 📊 Example Results
+## 📊 Results Section
 
-### **Extracted Text**:
-Once an image is uploaded, the extracted text will appear under the "Extracted Text" section. The output is formatted and displayed in a readable way using custom styles.
+In this section, you'll find screenshots and sample results from the **SnapExtract** portal. Below are some examples showcasing the OCR extraction and keyword search functionalities.
 
-### **Keyword Search**:
-Users can input a keyword, and the app will search within the extracted text. The result is dynamically shown:
-- **Keyword Found**: A green ✅ will appear, confirming the keyword is present.
-- **Keyword Not Found**: A red ❌ will appear, indicating that the keyword wasn't found.
+### 📸 Example 1: SnapExtract
+![English Text Extraction](https://your-image-link.com/english-example.png)
+> Screenshot of **SnapExtract**
+
+### 📸 Example 2
+![English Text Extraction](https://drive.google.com/file/d/1FBk28iFM67wQ6ILUE6vI6LOb0bn0GzKm/view?usp=sharing)
+> Screenshot of **SnapExtract**
+
+### 📸 Example 3
+![English Text Extraction](https://drive.google.com/file/d/1MxH3HaIfQCndte31laNeAP9GKUA0Rith/view?usp=sharing)
+> Screenshot of **SnapExtract**
+
+![Hindi Text Extraction](https://drive.google.com/file/d/1eC1oOPSDzd5j1w-5tI4CpZcElK-KocZc/view?usp=sharing)
+> Screenshot of **SnapExtract**
+
+### 📸 Example 4
+![Keyword Search](https://drive.google.com/file/d/1XF4yNPA5r2QdUSyY3xT0TtgkgH-WzhPB/view?usp=sharing)
+> Screenshot of **SnapExtract**
+
+### 📸 Example 5
+![English Text Extraction](https://drive.google.com/file/d/1dncUTmI9NjST_nJ3PLV1ONCXfZhplbCC/view?usp=sharing)
+> Screenshot of **SnapExtract**
+
+You can upload your own results and test the application using various types of images in the **Live Web Application**!
 
 ---
 

@@ -4,7 +4,7 @@ import numpy as np
 import easyocr
 
 # Set up the EasyOCR reader
-reader = easyocr.Reader(['en', 'hi'], gpu=False)
+reader = easyocr.Reader(['en', 'hi'], gpu=True)
 
 # Add a custom background (replace with your own image link)
 def add_bg_image():

@@ -99,27 +99,19 @@ You can deploy **SnapExtract** using **Streamlit Cloud** or other cloud platform
 In this section, you'll find screenshots and sample results from the **SnapExtract** portal. Below are some examples showcasing the OCR extraction and keyword search functionalities.
 
 ### 📸 Example 1: SnapExtract
-(https://ibb.co/cJjSSzd)
-> Screenshot of **SnapExtract**
+https://ibb.co/cJjSSzd
 
 ### 📸 Example 2
-![English Text Extraction](https://drive.google.com/file/d/1FBk28iFM67wQ6ILUE6vI6LOb0bn0GzKm/view?usp=sharing)
-> Screenshot of **SnapExtract**
+https://ibb.co/z5fR1gb
 
 ### 📸 Example 3
-![English Text Extraction](https://drive.google.com/file/d/1MxH3HaIfQCndte31laNeAP9GKUA0Rith/view?usp=sharing)
-> Screenshot of **SnapExtract**
-
-![Hindi Text Extraction](https://drive.google.com/file/d/1eC1oOPSDzd5j1w-5tI4CpZcElK-KocZc/view?usp=sharing)
-> Screenshot of **SnapExtract**
+https://ibb.co/qNtvcDj
 
 ### 📸 Example 4
-![Keyword Search](https://drive.google.com/file/d/1XF4yNPA5r2QdUSyY3xT0TtgkgH-WzhPB/view?usp=sharing)
-> Screenshot of **SnapExtract**
+https://ibb.co/MnSrpb4
 
 ### 📸 Example 5
-![English Text Extraction](https://drive.google.com/file/d/1dncUTmI9NjST_nJ3PLV1ONCXfZhplbCC/view?usp=sharing)
-> Screenshot of **SnapExtract**
+https://ibb.co/rsJ51ns
 
 You can upload your own results and test the application using various types of images in the **Live Web Application**!
 

@@ -2,6 +2,7 @@
 
 Welcome to **SnapExtract** – an intuitive web application that extracts text from images with high accuracy, supporting both **English** and **Hindi** languages. This tool allows users to upload images, extract text, and search for specific keywords within the extracted text, all wrapped in a stylish and interactive interface. 
 
+Check it out -> https://ocr-and-document-search-web-application-85s7nhf36ctfd2yybnzdh2.streamlit.app
 ---
 
 ## 🚀 Project Overview
